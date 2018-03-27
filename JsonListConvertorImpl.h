@@ -24,7 +24,6 @@ QList<T *> JsonListConvertor<T>::toList(const QJsonValue jsonList)
         T * item = new T();
 
         DomainObject *domainObj = dynamic_cast<DomainObject *>(item);
-        assert(domainObj);
         domainObj->fromJson(jsonList.toArray().at(i).toObject());
 
         resultList.append(item);
